@@ -1,0 +1,31 @@
+<html>
+
+<body>
+
+    <textarea id="polygonJson" rows="10" cols="20">Copy the polygon JSON here</textarea>
+    scale <input id="scaleText" type="text" value="1" size="3" />
+    <input type="button" value="Go" onclick="drawPolygon()" />
+    <canvas id="myCanvas" width="1000" height="500" style="border:1px solid #d3d3d3;">
+
+</body>
+
+<script>
+
+    function drawPolygon() {
+        let polygon = JSON.parse(document.getElementById('polygonJson').value)
+        let scale = document.getElementById("scaleText").value
+        let c = document.getElementById('myCanvas')
+        let ctx = c.getContext('2d')
+        ctx.clearRect(0, 0, c.width, c.height);
+        ctx.beginPath()
+        ctx.moveTo(polygon[0].x * scale, polygon[0].y * scale)
+        for(let i = 1; i < polygon.length-1; i++) {
+            ctx.lineTo(polygon[i].x * scale, polygon[i].y * scale)
+        }
+        ctx.lineTo(polygon[0].x * scale, polygon[0].y * scale)
+        ctx.stroke()
+    }
+
+</script>
+
+</html>

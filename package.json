@@ -1,0 +1,15 @@
+{
+  "name": "imgtopoly",
+  "version": "1.0.0",
+  "description": "Convert an image to a polygon",
+  "main": "imgToPoly.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jonas Yakimischak",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.11",
+    "shelljs": "^0.8.3"
+  }
+}
